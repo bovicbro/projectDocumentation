@@ -1,0 +1,12 @@
+[
+  {
+    "_id": "project_1",
+    "label": "Project 1",
+    "values": [
+      {
+        "fieldId": "field_1",
+        "value": "Pågende"
+      }
+    ]
+  }
+]
