@@ -10,6 +10,9 @@ class App extends Component {
     return (
       <Provider store={store}>
         <div className="App">
+          <div className="appHeader">
+            <h1>Project Documentation</h1>
+          </div>
           <ProjectGrid />
         </div>
       </Provider>
