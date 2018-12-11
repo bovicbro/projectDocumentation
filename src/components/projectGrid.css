@@ -7,15 +7,25 @@
 	height: 100vh;
 }
 
-.projectGridHeader{
-	width: 100%;
-	flex:0 0 20px;
+.projectGridRow{
+	width:100%;
+	flex: 0 0 30px;
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-start;
+	align-items: center;
+}
+
+#projectGridHeader{
 	border-bottom: 1px solid black;
 }
 
-.projectRow{
-	padding:0 20px;
+.projectGridColumn{
+	flex:1 1 100%;
+	display: flex;
+	justify-content: flex-start;
+}
+
+#projectGridHeader .projectGridColumn{
+	font-weight: bold;
 }

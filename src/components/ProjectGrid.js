@@ -5,10 +5,20 @@ class ProjectGrid extends Component {
   render() {
 	return (
 	  <div className="projectGrid">
-	  	<div className="projectGridHeader">
-	  		<div className="projectRow">Project</div>
-	  		<div className="projectRow">Value 1</div>
-	  		<div className="projectRow">Value 2</div>
+	  	<div className="projectGridRow" id="projectGridHeader">
+	  		<div className="projectGridColumn">Project</div>
+	  		<div className="projectGridColumn">Value 1</div>
+	  		<div className="projectGridColumn">Value 2</div>
+	  	</div>
+	  	<div className="projectGridRow">
+	  		<div className="projectGridColumn">Project</div>
+	  		<div className="projectGridColumn">Value 1</div>
+	  		<div className="projectGridColumn">Value 2</div>
+	  	</div>
+	  	<div className="projectGridRow">
+	  		<div className="projectGridColumn">Project</div>
+	  		<div className="projectGridColumn">Value 1</div>
+	  		<div className="projectGridColumn">Value 2</div>
 	  	</div>
 	  </div>
 	)
