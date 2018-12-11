@@ -16,5 +16,11 @@
     "label": "Field 3",
     "type": "text",
     "isColumn": true
+  },
+  {
+    "_id": "field_4",
+    "label": "Field 4",
+    "type": "text",
+    "isColumn": true
   }
 ]
