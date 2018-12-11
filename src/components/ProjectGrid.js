@@ -1,6 +1,7 @@
 import {connect} from 'react-redux';
 import React, { Component } from 'react';
 import './projectGrid.css';
+import ProjectGridRow from './ProjectGridRow'
 
 class ProjectGrid extends Component {
   render() {
@@ -15,15 +16,7 @@ class ProjectGrid extends Component {
 		  	)
 	  	})}
 	  	</div>
-	  	{projects.map(project=>{
-	  		return (
-		  		<div className="projectGridRow">
-			  		<div className="projectGridColumn">{project.label}</div>
-			  		<div className="projectGridColumn">{project.label}</div>
-			  		<div className="projectGridColumn">{project.label}</div>
-			  	</div>
-		  	)
-	  	})}
+	  	{projects.map(project=><ProjectGridRow project={project}/>)}
 	  </div>
 	)
   }
