@@ -1,0 +1,21 @@
+.projectGrid{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	justify-content: flex-start;
+	align-items: center;
+	height: 100vh;
+}
+
+.projectGridHeader{
+	width: 100%;
+	flex:0 0 20px;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	border-bottom: 1px solid black;
+}
+
+.projectRow{
+	padding:0 20px;
+}

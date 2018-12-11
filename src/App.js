@@ -6,6 +6,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <div className="appHeader">
+          <h1>Project Documentation</h1>
+        </div>
         <ProjectGrid />
       </div>
     );
