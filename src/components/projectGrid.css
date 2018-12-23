@@ -16,6 +16,10 @@
 	align-items: center;
 }
 
+.projectGridRow :hover{
+	cursor:pointer;
+}
+
 #projectGridHeader{
 	border-bottom: 1px solid black;
 }
