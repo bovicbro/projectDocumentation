@@ -29,6 +29,9 @@
 	display: flex;
 	justify-content: flex-start;
 }
+.projectGridRow :hover{
+	color: blue;
+}
 
 #projectGridHeader .projectGridColumn{
 	font-weight: bold;
