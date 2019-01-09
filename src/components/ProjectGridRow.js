@@ -26,7 +26,7 @@ class ProjectGridRow extends Component {
 
   renderExpanded() {
     if (this.state.expanded) {
-      return <ExpandedProject label={this.props.project.label} />
+      return <ExpandedProject project={this.props.project} />
     }
     return null
   }
