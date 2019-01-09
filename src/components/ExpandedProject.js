@@ -7,15 +7,14 @@ class ExpandedProject extends Component {
   render() {
     return (
       <div className="expandedProject">
-        <div className="ProjectName">{this.props.project.label}</div>
-          <div className="ProjectValueContainer">
-          {this.props.fields.map(field => (
-            <div className="ProjectValue">
-              <strong>{field.label}</strong>
-              {ProjectUtil.getFieldValue(this.props.project, field._id)}
-            </div>
-          ))}
+        <div className="ProjectValueContainer">
+        {this.props.fields.map(field => (
+          <div className="ProjectValue">
+            <strong>{field.label}</strong>
+            {ProjectUtil.getFieldValue(this.props.project, field._id)}
           </div>
+        ))}
+        </div>
       </div>
     );
   }
