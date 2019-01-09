@@ -20,6 +20,7 @@
 
 .projectGridRow :hover{
 	cursor:pointer;
+	color: blue;
 }
 
 #projectGridHeader{
@@ -30,9 +31,6 @@
 	flex:1 1;
 	display: flex;
 	justify-content: flex-start;
-}
-.projectGridRow :hover{
-	color: blue;
 }
 
 #projectGridHeader .projectGridColumn{
