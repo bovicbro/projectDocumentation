@@ -1,18 +1,22 @@
 import { connect } from "react-redux"
 import React from "react"
-
+import "./editModeSwitcher.css"
 import { toggleEditMode } from "../../store/actions/changeSettings"
 
 const EditModeSwitcher = ({ editable, toggleEditMode }) => {
   return (
-    <div>
-      <input
-        name="editable"
-        type="checkbox"
-        checked={editable}
-        onChange={toggleEditMode}
-      />
-      Editable
+    <div className="headerContainer">
+      <p>Edit Mode</p>
+      <label className="switch">
+        <input
+          className="checkbox"
+          name="editable"
+          type="checkbox"
+          checked={editable}
+          onChange={toggleEditMode}
+        />
+        <span class="slider round"></span>
+      </label>
     </div>
   )
 }
