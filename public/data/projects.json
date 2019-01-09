@@ -6,6 +6,10 @@
       {
         "fieldId": "field_1",
         "value": "Pågende"
+      },
+      {
+        "fieldId": "field_3",
+        "value": "Avslutat"
       }
     ]
   }
