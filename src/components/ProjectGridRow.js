@@ -2,13 +2,7 @@ import React, { Component } from "react"
 import ExpandedProject from "./ExpandedProject"
 //import './projectGridRow.css';
 
-const findProjectValue = (project, fieldId) => {
-  const value = project.values.find(
-    fieldValue => fieldValue.fieldId === fieldId
-  )
-
-  return value ? value.value : null
-}
+import ProjectUtil from "../utils/ProjectUtil"
 
 class ProjectGridRow extends Component {
   constructor(props) {
@@ -39,7 +33,7 @@ class ProjectGridRow extends Component {
           .filter(field => field.isColumn)
           .map(field => (
             <div className="projectGridColumn" key={field._id}>
-              {findProjectValue(this.props.project, field._id)}
+              {ProjectUtil.getFieldValue(this.props.project, field._id)}
             </div>
           ))}
         {this.renderExpanded()}
