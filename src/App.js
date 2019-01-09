@@ -4,12 +4,14 @@ import { Provider } from "react-redux"
 import ProjectGrid from "./components/ProjectGrid"
 
 import store from "./store"
+import EditModeSwitcher from "./components/settings/EditModeSwitcher"
 
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
         <div className="App">
+          <EditModeSwitcher />
           <div className="appHeader">
             <h1>Project Documentation</h1>
           </div>

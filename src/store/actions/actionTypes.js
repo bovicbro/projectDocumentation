@@ -1,2 +1,3 @@
 export const LOAD_PROJECTS = "LOAD_PROJECTS"
 export const LOAD_FIELDS = "LOAD_FIELDS"
+export const TOGGLE_EDIT_MODE = "TOGGLE_EDIT_MODE"
