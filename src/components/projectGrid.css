@@ -9,11 +9,13 @@
 
 .projectGridRow{
 	width:100%;
-	flex: 0 0 30px;
+	flex: 0 0 auto;
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-start;
-	align-items: center;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	padding:10px 0;
 }
 
 .projectGridRow :hover{
@@ -25,7 +27,7 @@
 }
 
 .projectGridColumn{
-	flex:1 1 100%;
+	flex:1 1;
 	display: flex;
 	justify-content: flex-start;
 }

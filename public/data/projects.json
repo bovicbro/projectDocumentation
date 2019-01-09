@@ -12,5 +12,19 @@
         "value": "Avslutat"
       }
     ]
+  },
+  {
+    "_id": "project_2",
+    "label": "Project 2",
+    "values": [
+      {
+        "fieldId": "field_1",
+        "value": "Pågende"
+      },
+      {
+        "fieldId": "field_3",
+        "value": "Avslutat"
+      }
+    ]
   }
 ]
