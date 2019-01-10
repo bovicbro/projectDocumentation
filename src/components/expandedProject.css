@@ -1,6 +1,6 @@
 .expandedProject {
 	border-radius: 2px;
-	flex: 0 0 calc(100% - 40px);	
+	flex: 0 0 calc(100% - 55px);	
 	margin-top: 10px;
 	transition: height 1s ease-out;
 	background: #ebebeb;

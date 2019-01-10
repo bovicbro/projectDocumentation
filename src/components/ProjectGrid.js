@@ -21,9 +21,12 @@ class ProjectGrid extends Component {
               )
             })}
         </div>
-        {projects.map(project => (
-          <ProjectGridRow project={project} fields={fields} key={project._id} />
-        ))}
+        	{projects.map(project => (
+        	<div className="projectGridRow">
+        	<div className="projectGridRowItem" id="expander">></div>
+          	<ProjectGridRow project={project} fields={fields} key={project._id} />
+        	</div>
+        	))}
       </div>
     )
   }

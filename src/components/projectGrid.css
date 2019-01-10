@@ -17,8 +17,26 @@
 	flex-wrap: wrap;
 	padding:10px 0;
 }
+.projectGridRowItem{
+	flex: 1 1 auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	padding:10px 0;
+}
 
-.projectGridRow :hover{
+#expander{
+	flex: 0 0 20px;
+}
+
+#expander:hover{
+	cursor: pointer;
+	color: blue;
+}
+
+.projectGridColumn :hover{
 	cursor:pointer;
 	color: blue;
 }
@@ -27,6 +45,10 @@
 	border-bottom: 1px solid black;
 	margin:0;
 	box-shadow: none;
+}
+
+#projectGridHeader:first-child{
+	padding-left: 25px;
 }
 
 .projectGridColumn{

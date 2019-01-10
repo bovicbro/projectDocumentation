@@ -32,7 +32,7 @@ class ProjectGridRow extends Component {
 
   render() {
     return (
-      <div className="projectGridRow" onClick={this.toggle}>
+      <div className="projectGridRowItem" onClick={this.toggle}>
         <div className="projectGridColumn">{this.props.project.label}</div>
         {this.props.fields
           .filter(field => field.isColumn)
