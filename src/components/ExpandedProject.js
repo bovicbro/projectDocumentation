@@ -1,28 +1,25 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import "./expandedProject.css";
 import ProjectUtil from "../utils/ProjectUtil";
+import EditableString from "./EditableString";
 
 class ExpandedProject extends Component {
   render() {
     return (
       <div className="expandedProject">
         <div className="ProjectValueContainer">
-        {this.props.fields.map(field => (
-          <div className="ProjectValue">
-            <strong>{field.label}</strong>
-            {ProjectUtil.getFieldValue(this.props.project, field._id)}
-          </div>
-        ))}
+          {this.props.fields.map(field => (
+            <div className="ProjectValue" key={field._id}>
+              <strong>{field.label}</strong>
+              <EditableString
+                text={ProjectUtil.getFieldValue(this.props.project, field._id)}
+              />
+            </div>
+          ))}
         </div>
       </div>
     );
   }
 }
-
-ExpandedProject.propTypes = {
-  project: PropTypes.object.isRequired,
-  fields: PropTypes.array.isRequired
-};
 
 export default ExpandedProject;

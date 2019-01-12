@@ -14,7 +14,7 @@ class ProjectGridRow extends Component {
 
   toggle() {
     this.setState({
-      expanded: !this.state.expanded
+      expanded: true
     });
   }
 
