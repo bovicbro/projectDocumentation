@@ -8,8 +8,13 @@ export default function projectReducer(state = initialState, action) {
       return action.payload.projects;
 
     case UPDATE_PROJECT:
-      const oldProjectindex = state.projects.findIndex(project => project._id);
-      return { ...state };
+      return state.projects.map(project => {
+        if (project._id !== action.payload.project._id) {
+          return project;
+        } else {
+          return action.payload.project;
+        }
+      });
 
     default:
       return state;

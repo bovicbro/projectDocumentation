@@ -18,7 +18,7 @@ class EditableString extends Component {
     if (this.state.editing) {
       return (
         <div>
-          <input type="text" placeholder={this.props.text} />
+          <input type="text" defaultValue={this.props.text} />
           <button onClick={this.toggleEditMode}>Save</button>
         </div>
       );
