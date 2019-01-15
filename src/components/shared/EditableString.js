@@ -12,17 +12,10 @@ class EditableString extends Component {
     this.resetAndToggleEdit = this.resetAndToggleEdit.bind(this);
     this.valueChanged = this.valueChanged.bind(this);
 
-    if (!this.props.text) {
-      this.state = {
-        editing: true,
-        value: ""
-      };
-    } else {
-      this.state = {
-        editing: false,
-        value: this.props.text
-      };
-    }
+    this.state = {
+      editing: false,
+      value: this.props.text
+    };
   }
 
   toggleEditMode() {
@@ -65,6 +58,12 @@ class EditableString extends Component {
           <button onClick={this.saveAndToggleEdit}>
             <FontAwesomeIcon icon="check" color="green" />
           </button>
+        </div>
+      );
+    } else if (!this.props.text) {
+      return (
+        <div onClick={this.toggleEditMode}>
+          <FontAwesomeIcon icon="plus-square" />
         </div>
       );
     } else {
