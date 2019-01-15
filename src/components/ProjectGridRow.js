@@ -39,7 +39,7 @@ class ProjectGridRow extends Component {
             (this.state.expanded ? "expanded" : "")
           }
           onClick={this.toggle}
-        >
+        	
           >
         </div>
         <div className="projectGridRowItem">
