@@ -7,6 +7,7 @@ class EditableString extends Component {
 
     this.toggleEditMode = this.toggleEditMode.bind(this)
     this.saveAndToggleEdit = this.saveAndToggleEdit.bind(this)
+    this.resetAndToggleEdit = this.resetAndToggleEdit.bind(this)
     this.valueChanged = this.valueChanged.bind(this)
 
     this.state = {
@@ -26,6 +27,13 @@ class EditableString extends Component {
     this.toggleEditMode()
   }
 
+  resetAndToggleEdit() {
+    this.setState({
+      value: this.props.text
+    })
+    this.toggleEditMode()
+  }
+
   valueChanged(event) {
     this.setState({ value: event.target.value })
   }
@@ -39,6 +47,7 @@ class EditableString extends Component {
             value={this.state.value}
             onChange={this.valueChanged}
           />
+          <button onClick={this.resetAndToggleEdit}>Reset</button>
           <button onClick={this.saveAndToggleEdit}>Save</button>
         </div>
       )
