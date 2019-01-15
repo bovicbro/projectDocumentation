@@ -9,14 +9,12 @@ input{
 }
 button{
     border: none;
-    height: 34px;
+    height: 36px;
     padding: 0;
     width: 33px;
-    margin-bottom: -10px;
     position: relative;
-    top: -26px;
-    margin-left: 0;
-    left: 38%;
+    left: calc(100% + 8px);
+    top: -27px;
 }
 button:hover{
 	cursor: pointer;

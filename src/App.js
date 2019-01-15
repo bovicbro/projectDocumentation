@@ -8,8 +8,8 @@ import EditModeSwitcher from "./components/settings/EditModeSwitcher"
 
 // Add font awesome
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faUndo,faCheck } from '@fortawesome/free-solid-svg-icons'
-library.add(faUndo,faCheck)
+import { faUndo,faCheck,faTimes } from '@fortawesome/free-solid-svg-icons'
+library.add(faUndo,faCheck,faTimes)
 
 class App extends Component {
   render() {
