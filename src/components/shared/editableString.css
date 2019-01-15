@@ -1,0 +1,23 @@
+input{
+	padding: 8px;
+    margin: -10px 0;
+    margin-left: -10px;
+    border: 1px solid #2096f3;
+    width: 100%;
+    height: 18px;
+    font-size: 1em;
+}
+button{
+    border: none;
+    height: 34px;
+    padding: 0;
+    width: 33px;
+    margin-bottom: -10px;
+    position: relative;
+    top: -26px;
+    margin-left: 0;
+    left: 38%;
+}
+button:hover{
+	cursor: pointer;
+}

@@ -9,7 +9,6 @@
   justify-content: flex-start;
   flex-wrap: wrap;
   padding: 20px;
-  max-height: 50px;
   overflow-y: scroll;
 }
 .ProjectValueContainer {
@@ -26,4 +25,8 @@
 
 .ProjectValue strong {
   margin-right: 15px;
+}
+
+.ProjectValue div {
+  height: 30px;
 }
