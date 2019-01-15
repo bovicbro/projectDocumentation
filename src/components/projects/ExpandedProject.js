@@ -1,34 +1,10 @@
 import React, { Component } from "react"
 import "./expandedProject.css"
-import ProjectUtil from "../../utils/ProjectUtil"
 import EditableFieldLabel from "../fields/EditableFieldLabel"
-import EditableString from "../shared/EditableString"
 import { updateProject } from "../../store/actions/updateProject"
 import { connect } from "react-redux"
+import EditableProjectField from "./EditableProjectField"
 class ExpandedProject extends Component {
-  constructor(props) {
-    super(props)
-
-    this.updateProjectValue = this.updateProjectValue.bind(this)
-  }
-
-  updateProjectValue(fieldId) {
-    return value => {
-      const project = { ...this.props.project }
-      project.values = project.values.map(fieldValue => {
-        if (fieldValue.fieldId === fieldId) {
-          return {
-            ...fieldValue,
-            value
-          }
-        } else {
-          return fieldValue
-        }
-      })
-      this.props.updateProject(project)
-    }
-  }
-
   render() {
     return (
       <div className="expandedProject">
@@ -38,9 +14,9 @@ class ExpandedProject extends Component {
               <strong>
                 <EditableFieldLabel field={field} />
               </strong>
-              <EditableString
-                text={ProjectUtil.getFieldValue(this.props.project, field._id)}
-                onChange={this.updateProjectValue(field._id)}
+              <EditableProjectField
+                field={field}
+                project={this.props.project}
               />
             </div>
           ))}

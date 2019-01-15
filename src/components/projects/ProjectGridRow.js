@@ -3,6 +3,7 @@ import ExpandedProject from "./ExpandedProject"
 //import './projectGridRow.css';
 
 import ProjectUtil from "../../utils/ProjectUtil"
+import EditableProjectField from "./EditableProjectField"
 
 class ProjectGridRow extends Component {
   constructor(props) {
@@ -46,7 +47,10 @@ class ProjectGridRow extends Component {
             .filter(field => field.isColumn)
             .map(field => (
               <div className="projectGridColumn" key={field._id}>
-                {ProjectUtil.getFieldValue(this.props.project, field._id)}
+                <EditableProjectField
+                  project={this.props.project}
+                  field={field}
+                />
               </div>
             ))}
           {this.renderExpanded()}
