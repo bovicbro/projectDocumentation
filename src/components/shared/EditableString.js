@@ -14,7 +14,7 @@ class EditableString extends Component {
 
     this.state = {
       editing: false,
-      value: this.props.text
+      value: !this.props.text ? "" : this.props.text
     };
   }
 
@@ -22,7 +22,7 @@ class EditableString extends Component {
     if (this.props.editable) {
       this.setState({
         editing: !this.state.editing,
-        value: this.props.text
+        value: !this.props.text ? "" : this.props.text
       });
     }
   }
