@@ -1,31 +1,33 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
+import React, { Component } from "react"
+import { connect } from "react-redux"
 
 class EditableString extends Component {
   constructor(props) {
-    super(props);
+    super(props)
 
-    this.toggleEditMode = this.toggleEditMode.bind(this);
-    this.saveAndToggleEdit = this.saveAndToggleEdit.bind(this);
-    this.valueChanged = this.valueChanged.bind(this);
+    this.toggleEditMode = this.toggleEditMode.bind(this)
+    this.saveAndToggleEdit = this.saveAndToggleEdit.bind(this)
+    this.valueChanged = this.valueChanged.bind(this)
 
     this.state = {
       editing: false,
       value: this.props.text
-    };
+    }
   }
 
   toggleEditMode() {
-    this.setState({ editing: !this.state.editing });
+    if (this.props.editable) {
+      this.setState({ editing: !this.state.editing })
+    }
   }
 
   saveAndToggleEdit() {
-    this.props.onChange(this.state.value);
-    this.toggleEditMode();
+    this.props.onChange(this.state.value)
+    this.toggleEditMode()
   }
 
   valueChanged(event) {
-    this.setState({ value: event.target.value });
+    this.setState({ value: event.target.value })
   }
 
   render() {
@@ -39,9 +41,9 @@ class EditableString extends Component {
           />
           <button onClick={this.saveAndToggleEdit}>Save</button>
         </div>
-      );
+      )
     } else {
-      return <div onClick={this.toggleEditMode}>{this.props.text}</div>;
+      return <div onClick={this.toggleEditMode}>{this.props.text}</div>
     }
   }
 }
@@ -49,7 +51,7 @@ class EditableString extends Component {
 const mapStateToProps = state => {
   return {
     editable: state.settings.editable
-  };
-};
+  }
+}
 
-export default connect(mapStateToProps)(EditableString);
+export default connect(mapStateToProps)(EditableString)
