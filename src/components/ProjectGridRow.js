@@ -33,8 +33,14 @@ class ProjectGridRow extends Component {
   render() {
     return (
       <div className="projectGridRow">
-        <div className="projectGridRowItem" id="expander" onClick={this.toggle}>
-          {this.state.expanded ? "X" : ">"}
+        <div
+          className={
+            "projectGridRowItem expander " +
+            (this.state.expanded ? "expanded" : "")
+          }
+          onClick={this.toggle}
+        >
+          >
         </div>
         <div className="projectGridRowItem">
           <div className="projectGridColumn">{this.props.project.label}</div>

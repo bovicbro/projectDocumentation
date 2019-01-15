@@ -1,62 +1,62 @@
-.projectGrid{
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	justify-content: flex-start;
-	align-items: center;
-	height: 100vh;
+.projectGrid {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
 }
 
-.projectGridRow{
-	width:100%;
-	flex: 0 0 auto;
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
-	align-items: flex-start;
-	flex-wrap: wrap;
-	padding:10px 0;
+.projectGridRow {
+  width: 100%;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 10px 0;
 }
-.projectGridRowItem{
-	flex: 1 1 auto;
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
-	align-items: flex-start;
-	flex-wrap: wrap;
-	padding:10px 0;
-}
-
-#expander{
-	flex: 0 0 20px;
+.projectGridRowItem {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 10px 0;
 }
 
-#expander:hover{
-	cursor: pointer;
-	color: blue;
+.expander {
+  flex: 0 0 20px;
 }
 
-.projectGridColumn :hover{
-	cursor:pointer;
-	color: blue;
+.expander:hover {
+  cursor: pointer;
+  color: blue;
 }
 
-#projectGridHeader{
-	border-bottom: 1px solid black;
-	margin:0;
-	box-shadow: none;
+.projectGridColumn :hover {
+  cursor: pointer;
+  color: blue;
 }
 
-#projectGridHeader:first-child{
-	padding-left: 25px;
+#projectGridHeader {
+  border-bottom: 1px solid black;
+  margin: 0;
+  box-shadow: none;
 }
 
-.projectGridColumn{
-	flex:1 1;
-	display: flex;
-	justify-content: flex-start;
+#projectGridHeader:first-child {
+  padding-left: 25px;
 }
 
-#projectGridHeader .projectGridColumn{
-	font-weight: bold;
+.projectGridColumn {
+  flex: 1 1;
+  display: flex;
+  justify-content: flex-start;
+}
+
+#projectGridHeader .projectGridColumn {
+  font-weight: bold;
 }
