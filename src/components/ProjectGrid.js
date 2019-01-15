@@ -2,7 +2,7 @@ import { connect } from "react-redux"
 import React, { Component } from "react"
 import "./projectGrid.css"
 import ProjectGridRow from "./ProjectGridRow"
-
+import EditableFieldLabel from "./fields/EditableFieldLabel"
 class ProjectGrid extends Component {
   render() {
     const projects = this.props.projects
@@ -16,7 +16,7 @@ class ProjectGrid extends Component {
             .map(field => {
               return (
                 <div className="projectGridColumn" key={field._id}>
-                  {field.label}
+                  <EditableFieldLabel field={field} />
                 </div>
               )
             })}
