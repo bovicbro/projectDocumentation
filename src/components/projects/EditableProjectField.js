@@ -1,29 +1,29 @@
-import React, { Component } from "react"
-import { connect } from "react-redux"
-import EditableString from "../shared/EditableString"
-import { updateProject } from "../../store/actions/updateProject"
-import ProjectUtil from "../../utils/ProjectUtil"
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import EditableString from "../shared/EditableString";
+import { updateProject } from "../../store/actions/updateProject";
+import ProjectUtil from "../../utils/ProjectUtil";
 
 class EditableProjectField extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
-    this.updateProjectValue = this.updateProjectValue.bind(this)
+    this.updateProjectValue = this.updateProjectValue.bind(this);
   }
 
   updateProjectValue(value) {
-    const project = { ...this.props.project }
+    const project = { ...this.props.project };
     project.values = project.values.map(fieldValue => {
       if (fieldValue.fieldId === this.props.field._id) {
         return {
           ...fieldValue,
           value
-        }
+        };
       } else {
-        return fieldValue
+        return fieldValue;
       }
-    })
-    this.props.updateProject(project)
+    });
+    this.props.updateProject(project);
   }
 
   render() {
@@ -35,19 +35,19 @@ class EditableProjectField extends Component {
         )}
         onChange={this.updateProjectValue}
       />
-    )
+    );
   }
 }
 
 const mapStateToProps = state => {
-  return {}
-}
+  return {};
+};
 
 const mapDispatchToProps = {
   updateProject
-}
+};
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(EditableProjectField)
+)(EditableProjectField);
