@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import "./App.css"
 import { Provider } from "react-redux"
-import ProjectGrid from "./components/ProjectGrid"
+import ProjectGrid from "./components/projects/ProjectGrid"
 
 import store from "./store"
 import EditModeSwitcher from "./components/settings/EditModeSwitcher"

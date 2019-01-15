@@ -20,7 +20,10 @@ class EditableString extends Component {
 
   toggleEditMode() {
     if (this.props.editable) {
-      this.setState({ editing: !this.state.editing })
+      this.setState({
+        editing: !this.state.editing,
+        value: this.props.text
+      })
     }
   }
 

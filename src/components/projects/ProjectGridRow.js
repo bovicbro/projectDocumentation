@@ -2,7 +2,8 @@ import React, { Component } from "react"
 import ExpandedProject from "./ExpandedProject"
 //import './projectGridRow.css';
 
-import ProjectUtil from "../utils/ProjectUtil"
+import ProjectUtil from "../../utils/ProjectUtil"
+import EditableProjectField from "./EditableProjectField"
 
 class ProjectGridRow extends Component {
   constructor(props) {
@@ -39,16 +40,17 @@ class ProjectGridRow extends Component {
             (this.state.expanded ? "expanded" : "")
           }
           onClick={this.toggle}
-        	
-          >
-        </div>
+        />
         <div className="projectGridRowItem">
           <div className="projectGridColumn">{this.props.project.label}</div>
           {this.props.fields
             .filter(field => field.isColumn)
             .map(field => (
               <div className="projectGridColumn" key={field._id}>
-                {ProjectUtil.getFieldValue(this.props.project, field._id)}
+                <EditableProjectField
+                  project={this.props.project}
+                  field={field}
+                />
               </div>
             ))}
           {this.renderExpanded()}
