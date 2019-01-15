@@ -1,9 +1,9 @@
 import React, { Component } from "react"
 import "./expandedProject.css"
-import ProjectUtil from "../utils/ProjectUtil"
-import EditableFieldLabel from "./fields/EditableFieldLabel"
-import EditableString from "./shared/EditableString"
-import { updateProject } from "../store/actions/updateProject"
+import ProjectUtil from "../../utils/ProjectUtil"
+import EditableFieldLabel from "../fields/EditableFieldLabel"
+import EditableString from "../shared/EditableString"
+import { updateProject } from "../../store/actions/updateProject"
 import { connect } from "react-redux"
 class ExpandedProject extends Component {
   constructor(props) {

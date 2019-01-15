@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import ExpandedProject from "./ExpandedProject"
 //import './projectGridRow.css';
 
-import ProjectUtil from "../utils/ProjectUtil"
+import ProjectUtil from "../../utils/ProjectUtil"
 
 class ProjectGridRow extends Component {
   constructor(props) {
@@ -39,9 +39,7 @@ class ProjectGridRow extends Component {
             (this.state.expanded ? "expanded" : "")
           }
           onClick={this.toggle}
-        	
-          >
-        </div>
+        />
         <div className="projectGridRowItem">
           <div className="projectGridColumn">{this.props.project.label}</div>
           {this.props.fields
