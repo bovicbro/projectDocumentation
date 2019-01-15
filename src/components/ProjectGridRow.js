@@ -14,7 +14,7 @@ class ProjectGridRow extends Component {
 
   toggle() {
     this.setState({
-      expanded: true
+      expanded: !this.state.expanded
     })
   }
 
@@ -32,16 +32,21 @@ class ProjectGridRow extends Component {
 
   render() {
     return (
-      <div className="projectGridRowItem" onClick={this.toggle}>
-        <div className="projectGridColumn">{this.props.project.label}</div>
-        {this.props.fields
-          .filter(field => field.isColumn)
-          .map(field => (
-            <div className="projectGridColumn" key={field._id}>
-              {ProjectUtil.getFieldValue(this.props.project, field._id)}
-            </div>
-          ))}
-        {this.renderExpanded()}
+      <div className="projectGridRow">
+        <div className="projectGridRowItem" id="expander" onClick={this.toggle}>
+          {this.state.expanded ? "X" : ">"}
+        </div>
+        <div className="projectGridRowItem">
+          <div className="projectGridColumn">{this.props.project.label}</div>
+          {this.props.fields
+            .filter(field => field.isColumn)
+            .map(field => (
+              <div className="projectGridColumn" key={field._id}>
+                {ProjectUtil.getFieldValue(this.props.project, field._id)}
+              </div>
+            ))}
+          {this.renderExpanded()}
+        </div>
       </div>
     )
   }
