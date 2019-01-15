@@ -50,7 +50,7 @@ class EditableString extends Component {
             onChange={this.valueChanged}
           />
           <button onClick={this.resetAndToggleEdit}><FontAwesomeIcon icon="undo" /></button>
-          <button onClick={this.saveAndToggleEdit}><FontAwesomeIcon icon="check" /></button>
+          <button onClick={this.saveAndToggleEdit}><FontAwesomeIcon icon="check" color="green" /></button>
         </div>
       )
     } else {

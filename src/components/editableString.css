@@ -1,10 +1,21 @@
 input{
 	padding: 8px;
-    margin: -10px;
+    margin: -10px 0;
+    margin-left: -10px;
     border: 1px solid #2096f3;
-    width: 70%;
-    margin-right: 10px;
+    width: 75%;
+    height: 18px;
+    font-size: 1em;
 }
 button{
 	border:none;
+	height: 36px;
+	padding:0;
+	width: 33px;
+	margin-bottom:-10px;
+	position: relative;
+	top: -5px;
+}
+button:hover{
+	cursor: pointer;
 }
