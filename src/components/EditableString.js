@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
 class EditableString extends Component {
   constructor(props) {
@@ -28,7 +29,7 @@ class EditableString extends Component {
   }
 
   render() {
-    if (this.state.editing) {
+    if (this.state.editing && this.props.editable) {
       return (
         <div>
           <input
@@ -44,4 +45,11 @@ class EditableString extends Component {
     }
   }
 }
-export default EditableString;
+
+const mapStateToProps = state => {
+  return {
+    editable: state.settings.editable
+  };
+};
+
+export default connect(mapStateToProps)(EditableString);
