@@ -24,11 +24,15 @@
 }
 
 .ProjectValue strong {
-  flex: 0 0 10%;
   text-align: left;
-  margin-right: 85px;
+  margin-right: 20px;
 }
 
 .ProjectValue div {
-  height: 30px;
+  height: 34px;
+  white-space: nowrap;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 1px 0;
 }

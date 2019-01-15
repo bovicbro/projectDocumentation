@@ -14,30 +14,31 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 .projectGridRowItem {
   flex: 1 1 auto;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   flex-wrap: wrap;
   padding: 10px 0;
 }
 
 .expander {
-	flex: 0 0 6px;
-	border: solid black;
-	border-width: 0 3px 3px 0;
-	display: inline-block;
-	height: 6px;
-	padding: 0;
-	margin-top: 14px;
-	margin-right: 12px;
-	transform: rotate(-45deg);
-	-webkit-transform: rotate(-45deg);
-	transition: all 0.3s ease;
+  flex: 0 0 6px;
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  height: 6px;
+  padding: 0;
+  margin-top: 18px;
+  margin-right: 12px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .expander:hover {
@@ -48,13 +49,18 @@
 .expanded {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
-  margin-top:12px;
+  margin-top:16px;
   transition: all 0.3s ease;
 } 
 
 .projectGridColumn :hover {
   cursor: pointer;
   color: blue;
+}
+
+.projectGridColumn > div{
+  display: flex;
+  justify-content: flex-start;
 }
 
 .projectGridHeader {
@@ -71,7 +77,9 @@
 .projectGridColumn {
   flex: 1 1;
   display: flex;
+  align-items: center;
   justify-content: flex-start;
+  height: 24px;
 }
 
 #projectGridHeader .projectGridColumn {
@@ -79,5 +87,5 @@
 }
 
 .projectGrid span{
-  margin-left:10px;
+  margin-left:5px;
 }
