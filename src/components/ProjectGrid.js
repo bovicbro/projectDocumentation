@@ -9,7 +9,7 @@ class ProjectGrid extends Component {
     const fields = this.props.fields
     return (
       <div className="projectGrid">
-        <div className="projectGridRow" id="projectGridHeader">
+        <div className="projectGridRow projectGridHeader">
           <div className="projectGridColumn">Project name</div>
           {fields
             .filter(field => field.isColumn)

@@ -1,0 +1,10 @@
+input{
+	padding: 8px;
+    margin: -10px;
+    border: 1px solid #2096f3;
+    width: 70%;
+    margin-right: 10px;
+}
+button{
+	border:none;
+}
