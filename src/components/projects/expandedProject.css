@@ -24,7 +24,9 @@
 }
 
 .ProjectValue strong {
-  margin-right: 15px;
+  flex: 0 0 10%;
+  text-align: left;
+  margin-right: 85px;
 }
 
 .ProjectValue div {

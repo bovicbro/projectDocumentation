@@ -4,6 +4,7 @@ import "./projectGrid.css"
 import ProjectGridRow from "./ProjectGridRow"
 import EditableFieldLabel from "../fields/EditableFieldLabel"
 import { toggleFieldAsColumn } from "../../store/actions/updateField"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 class ProjectGrid extends Component {
   constructor(props) {
     super(props)
@@ -28,7 +29,7 @@ class ProjectGrid extends Component {
               return (
                 <div className="projectGridColumn" key={field._id}>
                   <EditableFieldLabel field={field} />
-                  <span onClick={this.toggleField(field)}> (X)</span>
+                  <span onClick={this.toggleField(field)}> <FontAwesomeIcon icon="times" /></span>
                 </div>
               )
             })}

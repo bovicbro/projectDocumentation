@@ -77,3 +77,7 @@
 #projectGridHeader .projectGridColumn {
   font-weight: bold;
 }
+
+.projectGrid span{
+  margin-left:10px;
+}

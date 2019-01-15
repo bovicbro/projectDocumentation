@@ -11,9 +11,10 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faUndo,
   faCheck,
+  faTimes,
   faPlusSquare
 } from "@fortawesome/free-solid-svg-icons";
-library.add(faUndo, faCheck, faPlusSquare);
+library.add(faUndo, faCheck, faTimes, faPlusSquare);
 
 class App extends Component {
   render() {
