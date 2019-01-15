@@ -8,7 +8,7 @@ export default function projectReducer(state = initialState, action) {
       return action.payload.projects;
 
     case UPDATE_PROJECT:
-      return state.projects.map(project => {
+      return state.map(project => {
         if (project._id !== action.payload.project._id) {
           return project;
         } else {

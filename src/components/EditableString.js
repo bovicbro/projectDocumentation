@@ -5,8 +5,12 @@ class EditableString extends Component {
     super(props);
 
     this.toggleEditMode = this.toggleEditMode.bind(this);
+    this.saveAndToggleEdit = this.saveAndToggleEdit.bind(this);
+    this.valueChanged = this.valueChanged.bind(this);
+
     this.state = {
-      editing: false
+      editing: false,
+      value: this.props.text
     };
   }
 
@@ -14,12 +18,25 @@ class EditableString extends Component {
     this.setState({ editing: !this.state.editing });
   }
 
+  saveAndToggleEdit() {
+    this.props.onChange(this.state.value);
+    this.toggleEditMode();
+  }
+
+  valueChanged(event) {
+    this.setState({ value: event.target.value });
+  }
+
   render() {
     if (this.state.editing) {
       return (
         <div>
-          <input type="text" defaultValue={this.props.text} />
-          <button onClick={this.toggleEditMode}>Save</button>
+          <input
+            type="text"
+            value={this.state.value}
+            onChange={this.valueChanged}
+          />
+          <button onClick={this.saveAndToggleEdit}>Save</button>
         </div>
       );
     } else {
