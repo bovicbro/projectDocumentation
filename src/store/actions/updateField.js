@@ -6,3 +6,15 @@ export const updateField = field => {
     payload: { field }
   }
 }
+
+export const toggleFieldAsColumn = field => {
+  return {
+    type: UPDATE_FIELD,
+    payload: {
+      field: {
+        ...field,
+        isColumn: !field.isColumn
+      }
+    }
+  }
+}

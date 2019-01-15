@@ -3,7 +3,18 @@ import React, { Component } from "react"
 import "./projectGrid.css"
 import ProjectGridRow from "./ProjectGridRow"
 import EditableFieldLabel from "../fields/EditableFieldLabel"
+import { toggleFieldAsColumn } from "../../store/actions/updateField"
 class ProjectGrid extends Component {
+  constructor(props) {
+    super(props)
+
+    this.toggleField = this.toggleField.bind(this)
+  }
+
+  toggleField(field) {
+    return () => this.props.toggleFieldAsColumn(field)
+  }
+
   render() {
     const projects = this.props.projects
     const fields = this.props.fields
@@ -17,6 +28,7 @@ class ProjectGrid extends Component {
               return (
                 <div className="projectGridColumn" key={field._id}>
                   <EditableFieldLabel field={field} />
+                  <span onClick={this.toggleField(field)}> (X)</span>
                 </div>
               )
             })}
@@ -36,4 +48,11 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(ProjectGrid)
+const mapDispatchToProps = {
+  toggleFieldAsColumn
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ProjectGrid)
