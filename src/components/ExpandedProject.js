@@ -1,18 +1,30 @@
-import React, { Component } from "react";
-import "./expandedProject.css";
-import ProjectUtil from "../utils/ProjectUtil";
-import EditableString from "./EditableString";
-
+import React, { Component } from "react"
+import "./expandedProject.css"
+import ProjectUtil from "../utils/ProjectUtil"
+import EditableString from "./EditableString"
+import { updateProject } from "../store/actions/updateProject"
+import { connect } from "react-redux"
 class ExpandedProject extends Component {
   constructor(props) {
-    super(props);
+    super(props)
 
-    this.updateProjectValue = this.updateProjectValue.bind(this);
+    this.updateProjectValue = this.updateProjectValue.bind(this)
   }
 
-  updateProjectValue(field) {
-    return (value) => {
-      //update project
+  updateProjectValue(fieldId) {
+    return value => {
+      const project = { ...this.props.project }
+      project.values = project.values.map(fieldValue => {
+        if (fieldValue.fieldId === fieldId) {
+          return {
+            ...fieldValue,
+            value
+          }
+        } else {
+          return fieldValue
+        }
+      })
+      this.props.updateProject(project)
     }
   }
 
@@ -31,8 +43,20 @@ class ExpandedProject extends Component {
           ))}
         </div>
       </div>
-    );
+    )
+  }
+}
+const mapStateToProps = state => {
+  return {
+    editable: state.settings.editable
   }
 }
 
-export default ExpandedProject;
+const mapDispatchToProps = {
+  updateProject
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ExpandedProject)

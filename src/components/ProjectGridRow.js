@@ -1,21 +1,21 @@
-import React, { Component } from "react";
-import ExpandedProject from "./ExpandedProject";
+import React, { Component } from "react"
+import ExpandedProject from "./ExpandedProject"
 //import './projectGridRow.css';
 
-import ProjectUtil from "../utils/ProjectUtil";
+import ProjectUtil from "../utils/ProjectUtil"
 
 class ProjectGridRow extends Component {
   constructor(props) {
-    super(props);
+    super(props)
 
-    this.state = { expanded: false };
-    this.toggle = this.toggle.bind(this);
+    this.state = { expanded: false }
+    this.toggle = this.toggle.bind(this)
   }
 
   toggle() {
     this.setState({
       expanded: true
-    });
+    })
   }
 
   renderExpanded() {
@@ -25,9 +25,9 @@ class ProjectGridRow extends Component {
           project={this.props.project}
           fields={this.props.fields}
         />
-      );
+      )
     }
-    return null;
+    return null
   }
 
   render() {
@@ -43,8 +43,8 @@ class ProjectGridRow extends Component {
           ))}
         {this.renderExpanded()}
       </div>
-    );
+    )
   }
 }
 
-export default ProjectGridRow;
+export default ProjectGridRow
