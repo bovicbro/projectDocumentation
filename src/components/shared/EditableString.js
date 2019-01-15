@@ -12,6 +12,7 @@ class EditableString extends Component {
     this.resetAndToggleEdit = this.resetAndToggleEdit.bind(this);
     this.valueChanged = this.valueChanged.bind(this);
 
+    console.log(this.props.text);
     this.state = {
       editing: false,
       value: !this.props.text ? "" : this.props.text
@@ -60,7 +61,7 @@ class EditableString extends Component {
           </button>
         </div>
       );
-    } else if (!this.props.text) {
+    } else if (!this.props.text && this.props.editable) {
       return (
         <div onClick={this.toggleEditMode}>
           <FontAwesomeIcon icon="plus-square" />
