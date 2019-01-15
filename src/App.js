@@ -6,6 +6,11 @@ import ProjectGrid from "./components/projects/ProjectGrid"
 import store from "./store"
 import EditModeSwitcher from "./components/settings/EditModeSwitcher"
 
+// Add font awesome
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faUndo,faCheck } from '@fortawesome/free-solid-svg-icons'
+library.add(faUndo,faCheck)
+
 class App extends Component {
   render() {
     return (

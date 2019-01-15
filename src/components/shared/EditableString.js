@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./editableString.css";
 
 class EditableString extends Component {
   constructor(props) {
@@ -57,8 +59,12 @@ class EditableString extends Component {
             value={this.state.value}
             onChange={this.valueChanged}
           />
-          <button onClick={this.resetAndToggleEdit}>Reset</button>
-          <button onClick={this.saveAndToggleEdit}>Save</button>
+          <button onClick={this.resetAndToggleEdit}>
+            <FontAwesomeIcon icon="undo" />
+          </button>
+          <button onClick={this.saveAndToggleEdit}>
+            <FontAwesomeIcon icon="check" color="green" />
+          </button>
         </div>
       );
     } else {
