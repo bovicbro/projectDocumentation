@@ -3,13 +3,13 @@
   flex: 0 0 calc(100% - 55px);
   margin-top: 10px;
   transition: height 1s ease-out;
-  background: #ebebeb;
   color: black;
   display: flex;
   justify-content: flex-start;
-  flex-wrap: wrap;
   padding: 20px;
-  overflow-y: scroll;
+  border: 1px solid #bcbcbc;
+  border-left: none;
+  border-right: none;
 }
 .ProjectValueContainer {
   flex: 1 0 100%;
