@@ -55,7 +55,7 @@
 
 .projectGridColumn :hover {
   cursor: pointer;
-  color: blue;
+  color: black;
 }
 
 .projectGridColumn > div{
