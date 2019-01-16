@@ -4,6 +4,9 @@ input{
     height: 18px;
     font-size: 1em;
 }
+input:hover{
+    cursor: pointer;
+}
 button{
     border: none;
     height: 36px;

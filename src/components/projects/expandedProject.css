@@ -28,6 +28,10 @@
   margin-right: 20px;
 }
 
+.ProjectValue > strong:hover {
+  cursor: pointer;
+}
+
 .ProjectValue div {
   height: 34px;
   white-space: nowrap;
@@ -35,4 +39,8 @@
   display: flex;
   align-items: center;
   padding: 1px 0;
+}
+
+.ProjectValue > div:hover{
+  cursor: pointer;
 }
