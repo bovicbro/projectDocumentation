@@ -1,13 +1,13 @@
-import { createStore, applyMiddleware } from "redux";
+import { createStore, applyMiddleware } from "redux"
 
-import rootReducer from "./reducers/rootReducer";
-import thunk from "redux-thunk";
+import rootReducer from "./reducers/rootReducer"
+import thunk from "redux-thunk"
 
-import { fetchProjects, fetchFields } from "./actions/loadData";
+import { fetchProjects, fetchFields } from "./actions/loadData"
 
-const store = createStore(rootReducer, applyMiddleware(thunk));
+const store = createStore(rootReducer, applyMiddleware(thunk))
 
-store.dispatch(fetchProjects());
-store.dispatch(fetchFields());
+store.dispatch(fetchProjects())
+store.dispatch(fetchFields())
 
-export default store;
+export default store
