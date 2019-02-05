@@ -6,13 +6,7 @@ import EditableFieldLabel from "../fields/EditableFieldLabel"
 import { toggleFieldAsColumn } from "../../store/actions/updateField"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 class ProjectGrid extends Component {
-  constructor(props) {
-    super(props)
-
-    this.toggleField = this.toggleField.bind(this)
-  }
-
-  toggleField(field) {
+  toggleField = field => {
     return () => this.props.toggleFieldAsColumn(field)
   }
 

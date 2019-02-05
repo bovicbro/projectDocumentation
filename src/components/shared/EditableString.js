@@ -1,47 +1,37 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "./editableString.css";
+import React, { Component } from "react"
+import { connect } from "react-redux"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import "./editableString.css"
 
 class EditableString extends Component {
-  constructor(props) {
-    super(props);
-
-    this.toggleEditMode = this.toggleEditMode.bind(this);
-    this.saveAndToggleEdit = this.saveAndToggleEdit.bind(this);
-    this.resetAndToggleEdit = this.resetAndToggleEdit.bind(this);
-    this.valueChanged = this.valueChanged.bind(this);
-
-    console.log(this.props.text);
-    this.state = {
-      editing: false,
-      value: !this.props.text ? "" : this.props.text
-    };
+  state = {
+    editing: false,
+    value: !this.props.text ? "" : this.props.text
   }
 
-  toggleEditMode() {
+  toggleEditMode = () => {
     if (this.props.editable) {
       this.setState({
         editing: !this.state.editing,
         value: !this.props.text ? "" : this.props.text
-      });
+      })
     }
   }
 
-  saveAndToggleEdit() {
-    this.props.onChange(this.state.value);
-    this.toggleEditMode();
+  saveAndToggleEdit = () => {
+    this.props.onChange(this.state.value)
+    this.toggleEditMode()
   }
 
-  resetAndToggleEdit() {
+  resetAndToggleEdit = () => {
     this.setState({
       value: this.props.text
-    });
-    this.toggleEditMode();
+    })
+    this.toggleEditMode()
   }
 
-  valueChanged(event) {
-    this.setState({ value: event.target.value });
+  valueChanged = event => {
+    this.setState({ value: event.target.value })
   }
 
   render() {
@@ -60,15 +50,15 @@ class EditableString extends Component {
             <FontAwesomeIcon icon="check" color="green" />
           </button>
         </div>
-      );
+      )
     } else if (!this.props.text && this.props.editable) {
       return (
         <div onClick={this.toggleEditMode}>
           <FontAwesomeIcon icon="plus-square" />
         </div>
-      );
+      )
     } else {
-      return <div onClick={this.toggleEditMode}>{this.props.text}</div>;
+      return <div onClick={this.toggleEditMode}>{this.props.text}</div>
     }
   }
 }
@@ -76,7 +66,7 @@ class EditableString extends Component {
 const mapStateToProps = state => {
   return {
     editable: state.settings.editable
-  };
-};
+  }
+}
 
-export default connect(mapStateToProps)(EditableString);
+export default connect(mapStateToProps)(EditableString)

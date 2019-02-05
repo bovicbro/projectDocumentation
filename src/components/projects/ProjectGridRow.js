@@ -5,11 +5,7 @@ import ExpandedProject from "./ExpandedProject"
 import EditableProjectField from "./EditableProjectField"
 
 class ProjectGridRow extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = { expanded: false }
-  }
+  state = { expanded: false }
 
   toggle = () => {
     this.setState({
