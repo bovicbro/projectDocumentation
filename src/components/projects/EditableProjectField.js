@@ -5,13 +5,7 @@ import { updateProject } from "../../store/actions/updateProject"
 import ProjectUtil from "../../utils/ProjectUtil"
 
 class EditableProjectField extends Component {
-  constructor(props) {
-    super(props)
-
-    this.updateProjectValue = this.updateProjectValue.bind(this)
-  }
-
-  updateProjectValue(value) {
+  updateProjectValue = value => {
     const project = { ...this.props.project }
     let found = false
     project.values = project.values.map(fieldValue => {

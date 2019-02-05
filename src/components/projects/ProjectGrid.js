@@ -8,14 +8,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { newProject } from "../../store/actions/newProject";
 
 class ProjectGrid extends Component {
-  constructor(props) {
-    super(props);
-
-    this.toggleField = this.toggleField.bind(this);
-  }
-
-  toggleField(field) {
+  toggleField = field => {
     return () => this.props.toggleFieldAsColumn(field);
+  };
+
+  renderProjects() {
+    return this.props.projects.map(project => (
+      <ProjectGridRow
+        project={project}
+        fields={this.props.fields}
+        key={project._id}
+      />
+    ));
   }
 
   renderRemoveIcon(field) {
@@ -33,7 +37,6 @@ class ProjectGrid extends Component {
   };
 
   render() {
-    const projects = this.props.projects;
     const fields = this.props.fields;
     return (
       <div className="projectGrid">
@@ -50,9 +53,7 @@ class ProjectGrid extends Component {
               );
             })}
         </div>
-        {projects.map(project => (
-          <ProjectGridRow project={project} fields={fields} key={project._id} />
-        ))}
+        {this.renderProjects()}
         <span onClick={this.addProject}>
           <FontAwesomeIcon icon="plus-square" />
         </span>

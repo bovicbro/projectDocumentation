@@ -4,13 +4,7 @@ import EditableString from "../shared/EditableString"
 import { updateField } from "../../store/actions/updateField"
 
 class EditableFieldLabel extends Component {
-  constructor(props) {
-    super(props)
-
-    this.updateFieldLabel = this.updateFieldLabel.bind(this)
-  }
-
-  updateFieldLabel(label) {
+  updateFieldLabel = label => {
     this.props.updateField({ ...this.props.field, label })
   }
 
