@@ -2,18 +2,12 @@ import React, { Component } from "react"
 import ExpandedProject from "./ExpandedProject"
 //import './projectGridRow.css';
 
-import ProjectUtil from "../../utils/ProjectUtil"
 import EditableProjectField from "./EditableProjectField"
 
 class ProjectGridRow extends Component {
-  constructor(props) {
-    super(props)
+  state = { expanded: false }
 
-    this.state = { expanded: false }
-    this.toggle = this.toggle.bind(this)
-  }
-
-  toggle() {
+  toggle = () => {
     this.setState({
       expanded: !this.state.expanded
     })

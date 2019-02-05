@@ -1,4 +1,8 @@
-import { LOAD_PROJECTS, UPDATE_PROJECT } from "../actions/actionTypes";
+import {
+  LOAD_PROJECTS,
+  UPDATE_PROJECT,
+  NEW_PROJECT
+} from "../actions/actionTypes";
 
 const initialState = [];
 
@@ -15,6 +19,17 @@ export default function projectReducer(state = initialState, action) {
           return action.payload.project;
         }
       });
+
+    case NEW_PROJECT:
+      let id = Math.random()
+        .toString(36)
+        .substring(7);
+      let newProject = {
+        _id: id,
+        label: action.payload.label,
+        values: []
+      };
+      return [...state, newProject];
 
     default:
       return state;

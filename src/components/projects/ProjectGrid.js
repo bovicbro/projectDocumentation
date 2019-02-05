@@ -5,19 +5,38 @@ import ProjectGridRow from "./ProjectGridRow";
 import EditableFieldLabel from "../fields/EditableFieldLabel";
 import { toggleFieldAsColumn } from "../../store/actions/updateField";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { newProject } from "../../store/actions/newProject";
+
 class ProjectGrid extends Component {
-  constructor(props) {
-    super(props);
-
-    this.toggleField = this.toggleField.bind(this);
-  }
-
-  toggleField(field) {
+  toggleField = field => {
     return () => this.props.toggleFieldAsColumn(field);
+  };
+
+  renderProjects() {
+    return this.props.projects.map(project => (
+      <ProjectGridRow
+        project={project}
+        fields={this.props.fields}
+        key={project._id}
+      />
+    ));
   }
+
+  renderRemoveIcon(field) {
+    if (this.props.editable) {
+      return (
+        <span onClick={this.toggleField(field)}>
+          <FontAwesomeIcon icon="times" />
+        </span>
+      );
+    }
+  }
+
+  addProject = () => {
+    this.props.newProject("New project");
+  };
 
   render() {
-    const projects = this.props.projects;
     const fields = this.props.fields;
     return (
       <div className="projectGrid">
@@ -26,27 +45,18 @@ class ProjectGrid extends Component {
           {fields
             .filter(field => field.isColumn)
             .map(field => {
-              if (this.props.editable) {
-                return (
-                  <div className="projectGridColumn" key={field._id}>
-                    <EditableFieldLabel field={field} />
-                    <span onClick={this.toggleField(field)}>
-                      <FontAwesomeIcon icon="times" />
-                    </span>
-                  </div>
-                );
-              } else {
-                return (
-                  <div className="projectGridColumn" key={field._id}>
-                    <EditableFieldLabel field={field} />
-                  </div>
-                );
-              }
+              return (
+                <div className="projectGridColumn" key={field._id}>
+                  <EditableFieldLabel field={field} />
+                  {this.renderRemoveIcon(field)}
+                </div>
+              );
             })}
         </div>
-        {projects.map(project => (
-          <ProjectGridRow project={project} fields={fields} key={project._id} />
-        ))}
+        {this.renderProjects()}
+        <span onClick={this.addProject}>
+          <FontAwesomeIcon icon="plus-square" />
+        </span>
       </div>
     );
   }
@@ -61,7 +71,8 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = {
-  toggleFieldAsColumn
+  toggleFieldAsColumn,
+  newProject
 };
 
 export default connect(
