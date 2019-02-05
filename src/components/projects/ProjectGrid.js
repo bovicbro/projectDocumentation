@@ -54,7 +54,7 @@ class ProjectGrid extends Component {
             })}
         </div>
         {this.renderProjects()}
-        <span onClick={this.addProject}>
+        <span onClick={this.addProject} className="addProject">
           <FontAwesomeIcon icon="plus-square" />
         </span>
       </div>

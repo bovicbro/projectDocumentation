@@ -77,6 +77,8 @@
   color: white;
   width: calc(100% - 10px);
   margin-left: -15px;
+  position: fixed;
+  z-index: 2;
 }
 
 .projectGridHeader:first-child {
@@ -97,4 +99,14 @@
 
 .projectGrid span{
   margin-left:5px;
+}
+
+.addProject{
+  bottom: -1px;
+  font-size: 40px;
+  width: calc(100% + 16px);
+  background-color: blue;
+  margin-left: -15px!important;
+  padding: 15px 0;
+  margin-top:10px;
 }
