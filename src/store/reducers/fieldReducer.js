@@ -1,4 +1,4 @@
-import { LOAD_FIELDS, UPDATE_FIELD } from '../actions/actionTypes'
+import { LOAD_FIELDS, UPDATE_FIELD, NEW_FIELD } from '../actions/actionTypes'
 
 const initialState = []
 
@@ -13,6 +13,16 @@ export default function fieldReducer(state = initialState, action) {
           ? action.payload.field
           : field
       })
+
+    case NEW_FIELD:
+      const field = {
+        ...action.payload,
+        _id: Math.random()
+          .toString(36)
+          .substring(7),
+      }
+
+      return [...state, field]
 
     default:
       return state

@@ -1,6 +1,7 @@
-export const LOAD_PROJECTS = "LOAD_PROJECTS";
-export const LOAD_FIELDS = "LOAD_FIELDS";
-export const TOGGLE_EDIT_MODE = "TOGGLE_EDIT_MODE";
-export const UPDATE_PROJECT = "UPDATE_PROJECT";
-export const UPDATE_FIELD = "UPDATE_FIELD";
-export const NEW_PROJECT = "NEW_PROJECT";
+export const LOAD_PROJECTS = 'LOAD_PROJECTS'
+export const LOAD_FIELDS = 'LOAD_FIELDS'
+export const TOGGLE_EDIT_MODE = 'TOGGLE_EDIT_MODE'
+export const UPDATE_PROJECT = 'UPDATE_PROJECT'
+export const UPDATE_FIELD = 'UPDATE_FIELD'
+export const NEW_PROJECT = 'NEW_PROJECT'
+export const NEW_FIELD = 'NEW_FIELD'
