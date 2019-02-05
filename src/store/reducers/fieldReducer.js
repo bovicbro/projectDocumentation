@@ -1,4 +1,4 @@
-import { LOAD_FIELDS, UPDATE_FIELD } from "../actions/actionTypes"
+import { LOAD_FIELDS, UPDATE_FIELD } from '../actions/actionTypes'
 
 const initialState = []
 

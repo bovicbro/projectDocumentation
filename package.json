@@ -28,6 +28,7 @@
     ],
     "rules": {
       "semi": [
+        "error",
         "never"
       ]
     }

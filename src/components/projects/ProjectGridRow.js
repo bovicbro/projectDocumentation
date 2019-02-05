@@ -1,15 +1,15 @@
-import React, { Component } from "react"
-import ExpandedProject from "./ExpandedProject"
+import React, { Component } from 'react'
+import ExpandedProject from './ExpandedProject'
 //import './projectGridRow.css';
 
-import EditableProjectField from "./EditableProjectField"
+import EditableProjectField from './EditableProjectField'
 
 class ProjectGridRow extends Component {
   state = { expanded: false }
 
   toggle = () => {
     this.setState({
-      expanded: !this.state.expanded
+      expanded: !this.state.expanded,
     })
   }
 
@@ -30,8 +30,8 @@ class ProjectGridRow extends Component {
       <div className="projectGridRow">
         <div
           className={
-            "projectGridRowItem expander " +
-            (this.state.expanded ? "expanded" : "")
+            'projectGridRowItem expander ' +
+            (this.state.expanded ? 'expanded' : '')
           }
           onClick={this.toggle}
         />
