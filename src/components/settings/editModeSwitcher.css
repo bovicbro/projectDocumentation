@@ -1,14 +1,17 @@
 .headerContainer{
-    position: absolute;
+    position: fixed;
     right: 30px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
+    z-index: 2;
+    color: white;
 }
 .headerContainer p{
 	margin-bottom: 5px;
-    font-size: 0.8em;
+  margin-top: 0;
+  font-size: 0.8em;
 }.switch {
   position: relative;
   display: inline-block;

@@ -22,7 +22,7 @@ class App extends Component {
       <Provider store={store}>
         <div className="App">
           <EditModeSwitcher />
-          <div className="appHeader">
+          <div className="App-header">
             <h1>Project Documentation</h1>
           </div>
           <ProjectGrid />
