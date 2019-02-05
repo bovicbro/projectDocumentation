@@ -103,10 +103,19 @@
 
 .addProject{
   bottom: -1px;
-  font-size: 40px;
   width: calc(100% + 16px);
-  background-color: blue;
   margin-left: -15px!important;
   padding: 15px 0;
   margin-top:10px;
+  border-top: 1px solid black;
+  color: #2196F3;
+}
+
+.addProject i{
+  font-size:30px;
+}
+
+.addProject p{
+  padding: 0;
+  margin: 5px 0;
 }
