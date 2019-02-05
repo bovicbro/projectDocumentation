@@ -15,7 +15,7 @@ const EditModeSwitcher = ({ editable, toggleEditMode }) => {
           checked={editable}
           onChange={toggleEditMode}
         />
-        <span className="slider round"></span>
+        <span className="slider round" />
       </label>
     </div>
   )
