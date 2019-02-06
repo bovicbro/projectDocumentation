@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import ExpandedProject from './ExpandedProject'
 //import './projectGridRow.css';
 
 import EditableProjectField from './EditableProjectField'
+import EditableString from '../shared/EditableString'
+import { updateProject } from '../../store/actions/updateProject'
 
 class ProjectGridRow extends Component {
   state = { expanded: false }
@@ -25,6 +28,13 @@ class ProjectGridRow extends Component {
     return null
   }
 
+  updateProjectLabel = project => {
+    return label => {
+      let newProject = { ...project, label }
+      this.props.updateProject(newProject)
+    }
+  }
+
   render() {
     return (
       <div className="projectGridRow">
@@ -36,7 +46,12 @@ class ProjectGridRow extends Component {
           onClick={this.toggle}
         />
         <div className="projectGridRowItem">
-          <div className="projectGridColumn">{this.props.project.label}</div>
+          <div className="projectGridColumn">
+            <EditableString
+              text={this.props.project.label}
+              onChange={this.updateProjectLabel(this.props.project)}
+            />
+          </div>
           {this.props.fields
             .filter(field => field.isColumn)
             .map(field => (
@@ -54,4 +69,11 @@ class ProjectGridRow extends Component {
   }
 }
 
-export default ProjectGridRow
+const mapDispatchToProps = {
+  updateProject,
+}
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(ProjectGridRow)
