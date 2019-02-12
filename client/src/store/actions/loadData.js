@@ -12,8 +12,9 @@ export const fetchProjects = () => {
 
 export const fetchFields = () => {
   return dispatch => {
-    fetch('data/fields.json')
+    fetch('/fields')
       .then(res => res.json())
       .then(fields => dispatch({ type: LOAD_FIELDS, payload: { fields } }))
   }
 }
+
