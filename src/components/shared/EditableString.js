@@ -1,19 +1,19 @@
-import React, { Component } from "react"
-import { connect } from "react-redux"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import "./editableString.css"
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import './editableString.css'
 
 class EditableString extends Component {
   state = {
     editing: false,
-    value: !this.props.text ? "" : this.props.text
+    value: !this.props.text ? '' : this.props.text,
   }
 
   toggleEditMode = () => {
     if (this.props.editable) {
       this.setState({
         editing: !this.state.editing,
-        value: !this.props.text ? "" : this.props.text
+        value: !this.props.text ? '' : this.props.text,
       })
     }
   }
@@ -25,7 +25,7 @@ class EditableString extends Component {
 
   resetAndToggleEdit = () => {
     this.setState({
-      value: this.props.text
+      value: this.props.text,
     })
     this.toggleEditMode()
   }
@@ -37,19 +37,19 @@ class EditableString extends Component {
   render() {
     if (this.state.editing && this.props.editable) {
       return (
-        <div>
+        <form onSubmit={this.saveAndToggleEdit}>
           <input
             type="text"
             value={this.state.value}
             onChange={this.valueChanged}
           />
-          <button onClick={this.resetAndToggleEdit}>
+          <button type="button" onClick={this.resetAndToggleEdit}>
             <FontAwesomeIcon icon="undo" />
           </button>
-          <button onClick={this.saveAndToggleEdit}>
+          <button type="submit">
             <FontAwesomeIcon icon="check" color="green" />
           </button>
-        </div>
+        </form>
       )
     } else if (!this.props.text && this.props.editable) {
       return (
@@ -65,7 +65,7 @@ class EditableString extends Component {
 
 const mapStateToProps = state => {
   return {
-    editable: state.settings.editable
+    editable: state.settings.editable,
   }
 }
 
