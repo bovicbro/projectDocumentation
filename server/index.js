@@ -1,6 +1,7 @@
 const app = require('express')()
 const server = require('http').Server(app)
 const io = require('socket.io')(server)
+const cors = require('cors')
 
 const port = 3001
 const projects = [
@@ -60,6 +61,8 @@ const fields = [
     isColumn: true,
   },
 ]
+
+app.use(cors)
 
 app.get('/projects', (req, res, next) => {
   res.json(projects)
