@@ -1,8 +1,9 @@
 import {
   LOAD_PROJECTS,
   UPDATE_PROJECT,
-  NEW_PROJECT
-} from "../actions/actionTypes"
+  NEW_PROJECT,
+  REMOVE_PROJECT,
+} from '../actions/actionTypes'
 
 const initialState = []
 
@@ -27,9 +28,12 @@ export default function projectReducer(state = initialState, action) {
       let newProject = {
         _id: id,
         label: action.payload.label,
-        values: []
+        values: [],
       }
       return [...state, newProject]
+
+    case REMOVE_PROJECT:
+      return state.filter(project => project._id !== action.payload.project._id)
 
     default:
       return state
