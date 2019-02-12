@@ -12,7 +12,7 @@ class ProjectGrid extends Component {
     return () => this.props.toggleFieldAsColumn(field)
   }
 
-  renderProjects() {
+  renderProjectRows() {
     return this.props.projects.map(project => (
       <ProjectGridRow
         project={project}
@@ -46,33 +46,42 @@ class ProjectGrid extends Component {
     )
   }
 
+  renderTopRow() {
+    return (
+      <div className="projectGridRow projectGridHeader">
+        <div className="projectGridColumn">Project name</div>
+        {this.props.fields
+          .filter(field => field.isColumn)
+          .map(field => {
+            return (
+              <div className="projectGridColumn" key={field._id}>
+                <EditableFieldLabel field={field} />
+                {this.renderRemoveIcon(field)}
+              </div>
+            )
+          })}
+        {this.renderAddColumn()}
+      </div>
+    )
+  }
+
   addProject = () => {
     this.props.newProject('New project')
   }
 
   render() {
-    const fields = this.props.fields
     return (
       <div className="projectGrid">
-        <div className="projectGridRow projectGridHeader">
-          <div className="projectGridColumn">Project name</div>
-          {fields
-            .filter(field => field.isColumn)
-            .map(field => {
-              return (
-                <div className="projectGridColumn" key={field._id}>
-                  <EditableFieldLabel field={field} />
-                  {this.renderRemoveIcon(field)}
-                </div>
-              )
-            })}
-          {this.renderAddColumn()}
+        {this.renderTopRow()}
+        <div className="projectRowsContainer">
+          {this.renderProjectRows()}
+          <span onClick={this.addProject} className="addProject">
+            <i>
+              <FontAwesomeIcon icon="plus-square" />
+            </i>
+            <p>Add project</p>
+          </span>
         </div>
-        {this.renderProjects()}
-        <span onClick={this.addProject} className="addProject">
-          <i><FontAwesomeIcon icon="plus-square" /></i>
-          <p>Add project</p>
-        </span>
       </div>
     )
   }

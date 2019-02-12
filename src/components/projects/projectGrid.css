@@ -7,7 +7,7 @@
   height: calc(80vh - 15px);
   margin-top: calc(20vh - 15px);
   overflow-y: scroll;
-  margin-left:-15px;
+  margin-left: -15px;
   padding-left: 15px;
   padding-right: 15px;
 }
@@ -54,16 +54,16 @@
 .expanded {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
-  margin-top:16px;
+  margin-top: 16px;
   transition: all 0.3s ease;
-} 
+}
 
 .projectGridColumn :hover {
   cursor: pointer;
   color: black;
 }
 
-.projectGridColumn > div{
+.projectGridColumn > div {
   display: flex;
   justify-content: flex-start;
 }
@@ -97,25 +97,30 @@
   font-weight: bold;
 }
 
-.projectGrid span{
-  margin-left:5px;
+.projectGrid span {
+  margin-left: 5px;
 }
 
-.addProject{
+.addProject {
   bottom: -1px;
   width: calc(100% + 16px);
-  margin-left: -15px!important;
+  margin-left: -15px !important;
   padding: 15px 0;
-  margin-top:10px;
+  margin-top: 10px;
   border-top: 1px solid black;
-  color: #2196F3;
+  color: #2196f3;
 }
 
-.addProject i{
-  font-size:30px;
+.addProject i {
+  font-size: 30px;
 }
 
-.addProject p{
+.addProject p {
   padding: 0;
   margin: 5px 0;
+}
+
+.projectRowsContainer {
+  margin-top: 35px;
+  flex: 1;
 }
