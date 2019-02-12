@@ -1,3 +1,10 @@
+const express = require('express')
+const app = express()
+
+const port = 3001
+
+app.get('/projects', (req, res, next) => {
+  res.json(
 [
   {
     "_id": "project_1",
@@ -28,3 +35,9 @@
     ]
   }
 ]
+  )
+})
+
+app.listen(port, () => {
+ console.log("Server running at port: " + port)
+})
