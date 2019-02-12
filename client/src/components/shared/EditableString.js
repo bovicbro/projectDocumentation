@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './editableString.css'
+
+import mapsEditableToProps from './mapsEditableToProps'
 
 class EditableString extends Component {
   state = {
@@ -63,10 +64,4 @@ class EditableString extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    editable: state.settings.editable,
-  }
-}
-
-export default connect(mapStateToProps)(EditableString)
+export default mapsEditableToProps(EditableString)

@@ -6,7 +6,7 @@ import { removeProject } from '../../store/actions/removeProject'
 import { connect } from 'react-redux'
 import EditableProjectField from './EditableProjectField'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
+import mapsEditableToProps from '../shared/mapsEditableToProps'
 class ExpandedProject extends Component {
   render() {
     return (
@@ -42,11 +42,6 @@ class ExpandedProject extends Component {
     this.props.removeProject(this.props.project)
   }
 }
-const mapStateToProps = state => {
-  return {
-    editable: state.settings.editable,
-  }
-}
 
 const mapDispatchToProps = {
   updateProject,
@@ -54,6 +49,6 @@ const mapDispatchToProps = {
 }
 
 export default connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps
-)(ExpandedProject)
+)(mapsEditableToProps(ExpandedProject))

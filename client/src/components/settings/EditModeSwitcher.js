@@ -1,7 +1,8 @@
-import { connect } from "react-redux"
-import React from "react"
-import "./editModeSwitcher.css"
-import { toggleEditMode } from "../../store/actions/changeSettings"
+import { connect } from 'react-redux'
+import React from 'react'
+import './editModeSwitcher.css'
+import { toggleEditMode } from '../../store/actions/changeSettings'
+import mapsEditableToProps from '../shared/mapsEditableToProps'
 
 const EditModeSwitcher = ({ editable, toggleEditMode }) => {
   return (
@@ -21,17 +22,11 @@ const EditModeSwitcher = ({ editable, toggleEditMode }) => {
   )
 }
 
-const mapStateToProps = state => {
-  return {
-    editable: state.settings.editable
-  }
-}
-
 const mapDispatchToProps = {
-  toggleEditMode
+  toggleEditMode,
 }
 
 export default connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps
-)(EditModeSwitcher)
+)(mapsEditableToProps(EditModeSwitcher))

@@ -7,6 +7,8 @@ import { toggleFieldAsColumn } from '../../store/actions/updateField'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { newProject } from '../../store/actions/newProject'
 import { newField } from '../../store/actions/newField'
+import mapsEditableToProps from '../shared/mapsEditableToProps'
+
 class ProjectGrid extends Component {
   toggleField = field => {
     return () => this.props.toggleFieldAsColumn(field)
@@ -92,7 +94,6 @@ const mapStateToProps = state => {
   return {
     projects: state.projects,
     fields: state.fields,
-    editable: state.settings.editable,
   }
 }
 
@@ -105,4 +106,4 @@ const mapDispatchToProps = {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ProjectGrid)
+)(mapsEditableToProps(ProjectGrid))
