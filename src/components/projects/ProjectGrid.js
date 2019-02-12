@@ -37,6 +37,7 @@ class ProjectGrid extends Component {
   }
 
   renderAddColumn() {
+    if (!this.props.editable) return null
     return (
       <div className="projectGridColumn">
         <span onClick={this.addField} className="addField">

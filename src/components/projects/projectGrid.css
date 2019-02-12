@@ -122,5 +122,5 @@
 
 .projectRowsContainer {
   margin-top: 35px;
-  flex: 1;
+  width: 100%;
 }
