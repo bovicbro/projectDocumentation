@@ -15,36 +15,7 @@ project.save().then( (collection) => {
 })
 
 const port = 3001
-const projects = [
-  {
-    _id: 'project_1',
-    label: 'Project 1',
-    values: [
-      {
-        fieldId: 'field_1',
-        value: 'Pågende',
-      },
-      {
-        fieldId: 'field_3',
-        value: 'Avslutat',
-      },
-    ],
-  },
-  {
-    _id: 'project_2',
-    label: 'Project 2',
-    values: [
-      {
-        fieldId: 'field_1',
-        value: 'Pågende',
-      },
-      {
-        fieldId: 'field_3',
-        value: 'Avslutat',
-      },
-    ],
-  },
-]
+app.use(cors)
 
 const fields = [
   {
@@ -73,10 +44,14 @@ const fields = [
   },
 ]
 
-app.use(cors)
 
-app.get('/projects', (req, res, next) => {
-  res.json(projects)
+
+app.get('/', (req, res, next) => {
+  console.log('getting all projects');
+  ProjectModel.find({}, (error, docs) => {
+    console.log(docs);
+    res.json(docs)
+  })
 })
 
 app.get('/fields', (req, res, next) => {
