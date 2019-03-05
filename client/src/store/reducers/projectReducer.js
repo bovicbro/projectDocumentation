@@ -22,15 +22,7 @@ export default function projectReducer(state = initialState, action) {
       })
 
     case NEW_PROJECT:
-      let id = Math.random()
-        .toString(36)
-        .substring(7)
-      let newProject = {
-        _id: id,
-        label: action.payload.label,
-        values: [],
-      }
-      return [...state, newProject]
+      return [...state, action.payload]
 
     case REMOVE_PROJECT:
       return state.filter(project => project._id !== action.payload.project._id)

@@ -1,7 +1,7 @@
 import openSocket from 'socket.io-client'
 import rootReducer from './reducers/rootReducer'
 import thunk from 'redux-thunk'
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux'
 import { fetchProjects, fetchFields } from './actions/loadData'
 
 import { LOAD_PROJECTS, LOAD_FIELDS } from './actions/actionTypes'
@@ -25,9 +25,10 @@ const emitEventsToSocket = store => next => action => {
   return result
 }
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 const store = createStore(
   rootReducer,
-  applyMiddleware(thunk, emitEventsToSocket)
+  composeEnhancers(applyMiddleware(thunk, emitEventsToSocket))
 )
 
 store.dispatch(fetchProjects())

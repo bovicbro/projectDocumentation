@@ -5,7 +5,7 @@ import ProjectGridRow from './ProjectGridRow'
 import EditableFieldLabel from '../fields/EditableFieldLabel'
 import { toggleFieldAsColumn } from '../../store/actions/updateField'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { newProject } from '../../store/actions/newProject'
+import { createProject } from '../../store/actions/createProject'
 import { newField } from '../../store/actions/newField'
 import mapsEditableToProps from '../shared/mapsEditableToProps'
 
@@ -69,7 +69,7 @@ class ProjectGrid extends Component {
   }
 
   addProject = () => {
-    this.props.newProject('New project')
+    this.props.createProject('New project')
   }
 
   render() {
@@ -99,7 +99,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = {
   toggleFieldAsColumn,
-  newProject,
+  createProject,
   newField,
 }
 
