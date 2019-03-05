@@ -6,7 +6,7 @@ import { fetchProjects, fetchFields } from './actions/loadData'
 
 import { LOAD_PROJECTS, LOAD_FIELDS } from './actions/actionTypes'
 
-const socket = openSocket('http://victors.space:3001')
+const socket = openSocket('')
 
 socket.on('storeEvents', action => {
   action.isReceived = true
